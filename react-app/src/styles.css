@@ -1,0 +1,25 @@
+.weather-container {
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.weather-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.weather-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.weather-item p {
+  margin: 5px 0;
+}
