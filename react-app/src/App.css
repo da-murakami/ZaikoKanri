@@ -1,0 +1,77 @@
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.product-list {
+  margin-top: 20px;
+}
+
+.product-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-item {
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.product-item .name {
+  flex-basis: 45%;
+  min-width: 150px;
+}
+
+.product-item .price {
+  flex-basis: 15%;
+  text-align: right;
+  min-width: 80px;
+}
+
+.product-item .stock {
+  flex-basis: 20%;
+  text-align: center;
+  min-width: 100px;
+}
+
+button {
+  flex-basis: 10%;
+  min-width: 80px;
+  white-space: nowrap; /*折り返し防止*/
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.edit-product-form {
+  margin-top: 20px;
+}
+
+.edit-product-form input {
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.edit-product-form label {
+  margin-right: 10px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
