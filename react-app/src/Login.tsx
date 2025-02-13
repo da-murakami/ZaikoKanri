@@ -34,7 +34,7 @@ const Login: React.FC = () => {
     alert('ログイン成功!');
 
     // ログイン成功後に天気画面へ遷移
-    navigate('/weather');
+    navigate('/screenlist');
   };
 
   return (
