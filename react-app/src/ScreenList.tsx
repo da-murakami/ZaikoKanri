@@ -9,7 +9,7 @@ const ScreenList: React.FC = () => {
                 <Link to="/screen1"><button className="button">ボタン1</button></Link>
                 <Link to="/screen2"><button className="button">ボタン2</button></Link>
                 <Link to="/screen3"><button className="button">ボタン3</button></Link>
-                <Link to="/screen4"><button className="button">ボタン4</button></Link>
+                <Link to="/weather"><button className="button">ボタン4</button></Link>
             </div>
         </div>
     );
