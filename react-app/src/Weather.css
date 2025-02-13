@@ -138,3 +138,36 @@
   padding: 0; /* paddingをゼロに */
   font-size: 1rem; /* 必要に応じてフォントサイズを調整 */
 }
+
+.tab-bar {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* タブリスト：中央に揃え、各タブの間に隙間を作成 */
+.tab-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* タブ項目：自動的にサイズ調整 */
+.tab-item {
+  /* 必要に応じて個別スタイルを追加 */
+}
+
+/* タブリンクのスタイル */
+.tab-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}

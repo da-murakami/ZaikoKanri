@@ -1,24 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Weather.css'; // CSSファイルをインポート
+import { Link } from 'react-router-dom';
+import './Weather.css';
+
+interface WeatherData {
+  location: {
+    city: string;
+  };
+  forecasts: Array<{
+    date: string;
+    telop: string;
+    image: { url: string };
+    temperature: {
+      min: { celsius: string | null } | null;
+      max: { celsius: string | null } | null;
+    };
+  }>;
+}
 
 const Weather: React.FC = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
-  const leftImages = ['/image/oamesyoki_.jpg', '/image/d6dlsyg-52f89407-773a-464f-93d3-4648cc91f3fb.jpg'];  // 左側の画像
-  const rightImages = ['/image/d6dlsyg-52f89407-773a-464f-93d3-4648cc91f3fb.jpg', '/image/red_eyes_b__dragon__v2_by_kingofgamesoricards_dfb15z7-fullview.png']; // 右側の画像
+  const leftImages = [
+    '/image/oamesyoki_.jpg',
+    '/image/d6dlsyg-52f89407-773a-464f-93d3-4648cc91f3fb.jpg'
+  ]; // 左側の画像
+  const rightImages = [
+    '/image/d6dlsyg-52f89407-773a-464f-93d3-4648cc91f3fb.jpg',
+    '/image/red_eyes_b__dragon__v2_by_kingofgamesoricards_dfb15z7-fullview.png'
+  ]; // 右側の画像
 
-  const [leftImageIndex, setLeftImageIndex] = useState(0);  // 左側の画像のインデックス
-  const [rightImageIndex, setRightImageIndex] = useState(0);  // 右側の画像のインデックス
+  const [leftImageIndex, setLeftImageIndex] = useState(0);
+  const [rightImageIndex, setRightImageIndex] = useState(0);
 
   useEffect(() => {
     // 天気データ取得
     const apiUrl = 'https://weather.tsukumijima.net/api/forecast?city=130010';
 
-    axios
-      .get(apiUrl)
+    axios.get(apiUrl)
       .then((response) => {
         setWeatherData(response.data);
         setLoading(false);
@@ -30,28 +51,48 @@ const Weather: React.FC = () => {
 
     // 画像の切り替え処理
     const interval = setInterval(() => {
-      setLeftImageIndex((prevIndex) => (prevIndex + 1) % leftImages.length); // 左側画像のインデックスを切り替え
-      setRightImageIndex((prevIndex) => (prevIndex + 1) % rightImages.length); // 右側画像のインデックスを切り替え
-    }, 3000); // 2秒ごとに画像を切り替え（アニメーションの長さと同期）
+      setLeftImageIndex((prevIndex) => (prevIndex + 1) % leftImages.length);
+      setRightImageIndex((prevIndex) => (prevIndex + 1) % rightImages.length);
+    }, 3000);
 
-    // コンポーネントのアンマウント時にインターバルをクリア
     return () => clearInterval(interval);
-  }, []);  // 最初の一回だけ実行
+  }, []);
 
   return (
     <div className="weather-container">
+      {/* 上部にタブバーを配置 */}
+      <nav className="tab-bar">
+        <ul className="tab-list">
+          <li className="tab-item">
+            <Link to="/home" className="tab-link">Home</Link>
+          </li>
+          <li className="tab-item">
+            <Link to="/weather" className="tab-link">Weather</Link>
+          </li>
+          <li className="tab-item">
+            <Link to="/news" className="tab-link">News</Link>
+          </li>
+          <li className="tab-item">
+            <Link to="/settings" className="tab-link">Settings</Link>
+          </li>
+          <li className="tab-item">
+            <Link to="/profile" className="tab-link">Profile</Link>
+          </li>
+        </ul>
+      </nav>
+
       <header className="weather-header">
         <div className="header-content">
           {/* 左側の画像 */}
           <img
-            src={leftImages[leftImageIndex]}  // 画像のインデックスに基づいて切り替える
+            src={leftImages[leftImageIndex]}
             alt="左画像"
             className="side-image"
           />
           <h1 className="weather-title">お天気</h1>
           {/* 右側の画像 */}
           <img
-            src={rightImages[rightImageIndex]}  // 画像のインデックスに基づいて切り替える
+            src={rightImages[rightImageIndex]}
             alt="右画像"
             className="side-image"
           />
@@ -79,7 +120,7 @@ const Weather: React.FC = () => {
                 <p>{forecast.telop}</p>
                 <p>
                   <span className="temperature-min">
-                    {forecast.temperature.min?.celsius ?? '--'}℃ 
+                    {forecast.temperature.min?.celsius ?? '--'}℃
                   </span>
                   /
                   <span className="temperature-max">
