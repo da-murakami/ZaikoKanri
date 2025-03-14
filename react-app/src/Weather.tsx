@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import './Weather.css';
 
 interface WeatherData {
@@ -60,26 +59,6 @@ const Weather: React.FC = () => {
 
   return (
     <div className="weather-container">
-      {/* 上部にタブバーを配置 */}
-      <nav className="tab-bar">
-        <ul className="tab-list">
-          <li className="tab-item">
-            <Link to="/home" className="tab-link">Home</Link>
-          </li>
-          <li className="tab-item">
-            <Link to="/weather" className="tab-link">Weather</Link>
-          </li>
-          <li className="tab-item">
-            <Link to="/news" className="tab-link">News</Link>
-          </li>
-          <li className="tab-item">
-            <Link to="/settings" className="tab-link">Settings</Link>
-          </li>
-          <li className="tab-item">
-            <Link to="/profile" className="tab-link">Profile</Link>
-          </li>
-        </ul>
-      </nav>
 
       <header className="weather-header">
         <div className="header-content">
@@ -119,12 +98,12 @@ const Weather: React.FC = () => {
                 />
                 <p>{forecast.telop}</p>
                 <p>
-                  <span className="temperature-min">
-                    {forecast.temperature.min?.celsius ?? '--'}℃
-                  </span>
-                  /
                   <span className="temperature-max">
                     {forecast.temperature.max?.celsius ?? '--'}℃
+                  </span>
+                  /
+                  <span className="temperature-min">
+                    {forecast.temperature.min?.celsius ?? '--'}℃
                   </span>
                 </p>
               </div>

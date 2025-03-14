@@ -1,0 +1,108 @@
+/* コンテナ全体を中央に配置し、はみ出し防止 */
+.cardRegistration-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* フォーム全体の幅を制御 */
+form {
+    width: 200%;
+    max-width: 800px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow: auto; /* 必要な場合のみスクロール */
+}
+
+/* カード名と説明文を横並びに配置しつつ余白調整 */
+.card-name-description-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    flex-wrap: wrap; /* 幅が狭い場合は折り返し */
+}
+
+/* カード名の入力欄をラベルと横並びに配置 */
+.card-name-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* 幅が狭い場合は折り返し */
+}
+
+.card-name-container label {
+    white-space: nowrap;
+}
+
+.card-name-container input {
+    flex: 1;
+    min-width: 300px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* テキストエリアのサイズと余白調整 */
+.textarea-with-label textarea {
+    width: 400px;
+    height: 180px;
+    resize: vertical;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* ファイルアップロードのコンテナ調整 */
+.file-upload-container {
+    border: 2px dashed #ccc;
+    padding: 30px;
+    text-align: center;
+    margin: 40px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ボタンスタイル調整 */
+.button, .file-upload-button, .add-button, .cancel-button {
+    background-color: #33923b;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+.button:hover, .file-upload-button:hover, .add-button:hover, .cancel-button:hover {
+    background-color: #0056b3;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .cardRegistration-container {
+        align-items: flex-start;
+        padding: 15px;
+    }
+    
+    form {
+        padding: 20px;
+    }
+
+    .card-name-description-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

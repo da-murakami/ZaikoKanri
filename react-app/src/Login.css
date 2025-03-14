@@ -1,0 +1,90 @@
+/* ログインページ全体のスタイル */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  flex-direction: column; /* フォームとタイトルが縦並びになるように設定 */
+}
+
+/* フォームのスタイル */
+form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* タイトルのスタイル */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 0; /* 上の余白をゼロに設定 */
+  margin-bottom: 20px; /* 下の余白を調整 */
+  font-size: 24px; /* フォントサイズを調整 */
+  line-height: 1.5; /* 行間を調整 */
+  writing-mode: initial; /* 横書きに戻す */
+  transform: none; /* もし回転していたら、回転を無効に */
+  display: block; /* ブロック要素として指定 */
+}
+
+/* 入力フィールドのスタイル */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* フォームのラベルのスタイル */
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* エラーメッセージのスタイル */
+p {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+/* ログインボタンのスタイル */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background-color: #33923b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2d7a31;
+}
+
+/* レスポンシブ対応（小さい画面でも良い表示を維持） */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+  }
+
+  form {
+    padding: 20px;
+  }
+}

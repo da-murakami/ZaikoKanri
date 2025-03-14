@@ -1,0 +1,107 @@
+/* コンテナ全体 */
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 検索フォーム */
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.search-section input,
+.search-section select,
+.search-section button {
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+/* 商品リスト */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* 商品カード */
+.product-card {
+  background-color: #ffecd1;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 画像のスタイル */
+.product-image {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+/* カード名 */
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+/* お気に入りボタン */
+.favorite-button {
+  background-color: #ccc;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.favorite-button.favorite {
+  background-color: gold;
+}
+
+.favorite-button:hover {
+  background-color: #ffcc00;
+}
+
+/* 枚数の変更ボタン */
+.count-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.count-section button {
+  padding: 5px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.count-section span {
+  font-size: 16px;
+}
+
+.count-section button:hover {
+  background-color: #45a049;
+}

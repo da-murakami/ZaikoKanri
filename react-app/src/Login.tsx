@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // useNavigate と Link をインポート
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 interface LoginFormData {
   username: string;
@@ -40,12 +41,6 @@ const Login: React.FC = () => {
   return (
     <div className="login-container">
       <h2>ログイン</h2>
-
-      {/* タブの追加 */}
-      <div className="tabs">
-        <Link to="/login" className="tab-link">ログイン</Link>
-        <Link to="/weather" className="tab-link">天気予報</Link>
-      </div>
 
       <form onSubmit={handleSubmit}>
         <div>
